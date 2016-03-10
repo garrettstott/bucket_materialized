@@ -1,6 +1,7 @@
-<h1 class='center-align grey-text text-darken-3'><%= current_user.first_name %>'s Bukkits</h1>
+<h1 class='center-align blue-grey-text text-darken-3'><%= current_user.first_name %>'s Bukkits</h1>
 <div class='row'>
-  <% current_user.buckets.each do |bucket| %>
+<%= will_paginate @buckets %>
+  <% @buckets.each do |bucket| %>
     <div class='col s2 cards-container'>
       <div class=" card large blue-grey darken-1">
           <p class='center-align title-color'><%= link_to bucket.name, bucket_path(bucket), class: 'card-title' %></p>

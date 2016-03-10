@@ -3,7 +3,7 @@ class BucketsController < ApplicationController
 before_action :bucket, only: [:show, :edit, :destroy, :update]
 
   def index
-    @buckets = current_user.buckets
+    @buckets = current_user.buckets.paginate(page: params[:page], per_page: 6)
   end
 
   def show

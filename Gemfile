@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'materialize-sass'
+gem 'will_paginate-materialize'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'devise', '~> 3.4.0'
@@ -45,4 +46,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
 end
