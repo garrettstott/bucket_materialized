@@ -1,0 +1,30 @@
+@import "materialize";
+@import "buckets";
+@import "home";
+@import "items";
+@import "materialize_override";
+
+body {
+  background-color: #eceff1;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.bucket-title-index {
+  color: #bbdefb;
+}
+
+.title-color a {
+  color: #fff3e0 !important;
+}
+
+.title-color {
+  padding: 10px;
+}
+
+.navbar-name {
+  font-size: 1.4em;
+  margin: 0 45px 0 5px;
+}

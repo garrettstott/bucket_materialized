@@ -1,1 +1,16 @@
-<%= link_to 'Home', root_path %>
+<nav class="blue-grey darken-2">
+  <div class="nav-wrapper">
+    <a href="/home/index" class="brand-logo center">FUKKIT BUKKIT</a>
+    <ul id="nav-mobile" class="left">
+      <% if user_signed_in? %>
+      <li class='navbar-name'>Hello, <%= current_user.first_name %>!</li>
+      <li><%= link_to 'HOME', root_path %></li>
+      <li><%= link_to "NEW BUKKIT", new_bucket_path %></li>
+      <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+      <li><%= link_to 'LOGIN', new_user_session_path %></li>
+      <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

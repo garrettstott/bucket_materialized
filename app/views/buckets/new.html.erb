@@ -1,8 +1,12 @@
-<h1>New Bukket</h1>
-<%= form_for @bucket do |f| %>
-  <%= f.label :name %>
-  <br />
-  <%= f.text_field :name %>
-  <br />
-  <%= f.submit %>
-<% end %>
+<div class='row'>
+  <div class='col s4'>
+    <h1 class="text-grey text-darken-3">New Bukkit</h1>
+    <%= form_for @bucket do |f| %>
+      <%= f.label :name %>
+      <br />
+      <%= f.text_field :name %>
+      <br />
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

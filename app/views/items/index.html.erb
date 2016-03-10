@@ -1,8 +1,19 @@
-<h1><%= @bucket.name %>'s Items</h1>
-<% @items.each do |item| %>
-<p><%= item.name %><p>
-  <%= link_to "Edit", edit_bucket_item_path(@bucket, item) %>
-  <%= link_to "Delete", bucket_item_path(@bucket, item), method: :delete %>
-<% end %>
-<br />
-<%= link_to 'Add Item', new_bucket_item_path(@bucket) %>
+<div class="row">
+  <div class="col s2 m2">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title text-grey text-darken-3"><%= @bucket.name %>: Items</span>
+        <% @items.each do |item| %>
+        <ul>
+          <li><%= item.name %></li>
+        </ul>
+        <%= link_to "Edit", edit_bucket_item_path(@bucket, item) %>
+        <%= link_to "Delete", bucket_item_path(@bucket, item), method: :delete %>
+        <% end %>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Add Item', new_bucket_item_path(@bucket) %>
+      </div>
+    </div>
+  </div>
+</div>

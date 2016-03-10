@@ -1,11 +1,23 @@
-<h1><%= current_user.first_name %>'s Buckets</h1>
+<h1 class='center-align grey-text text-darken-3'><%= current_user.first_name %>'s Bukkits</h1>
+<div class='row'>
   <% current_user.buckets.each do |bucket| %>
-    <h3><%= link_to bucket.name, bucket_path(bucket) %></h3>
-    <br />
-    <% bucket.items.each do |item| %>
-      <p><%= item.name %></p>
-    <% end %>
-    <%= link_to "Delete", bucket_path(bucket), method: :delete %>
+    <div class='col s2 cards-container'>
+      <div class=" card large blue-grey darken-1">
+          <p class='center-align title-color'><%= link_to bucket.name, bucket_path(bucket), class: 'card-title' %></p>
+          <div class="card-content white-text">
+          <% bucket.items.each do |item| %>
+            <ul>
+              <li><%= item.name %></li>
+            </ul>
+          <% end %>
+        </div>
+        <div class="card-action">
+          <%= link_to "Delete", bucket_path(bucket), method: :delete %>
+        </div>
+      </div>
+    </div>
   <% end %>
-  <br />
-  <%= link_to "New Bucket", new_bucket_path %>
+</div>
+
+
+<%= link_to "New Bucket", new_bucket_path, class: 'waves-effect waves-light btn-large margin-left' %>
